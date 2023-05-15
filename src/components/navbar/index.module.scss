@@ -1,0 +1,10 @@
+.Navbar {
+  display: flex;
+  list-style-type: none;
+  gap: 55px;
+
+  li {
+    cursor: pointer;
+    letter-spacing: 2px;
+  }
+}

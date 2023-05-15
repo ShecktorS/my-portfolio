@@ -1,0 +1,23 @@
+@import "../../scss/variables";
+
+.Header {
+  height: 100px;
+  margin: 10px 50px;
+  padding: 0 20px;
+  border-bottom: 1px solid $secondary;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h3 {
+    font-weight: 200;
+    width: 100px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  p {
+    width: 100px;
+  }
+}
