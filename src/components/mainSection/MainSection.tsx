@@ -20,6 +20,12 @@ const MainSection: React.FC<Props> = (props) => {
       <p className={styles.shortDescription}>{myUserData.description}</p>
       <button className={styles.curriculumDownload}>
         Download my {searchCV()}
+        <a
+          href={myUserData.resources[0].url}
+          target="_blank"
+          rel="noopener noreferrer"
+          // TODO: Per risolvere usa axios libreria oppure scarica direttamente il file pdf
+        ></a>
       </button>
     </div>
   );

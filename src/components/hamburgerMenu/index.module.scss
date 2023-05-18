@@ -22,4 +22,5 @@
 .showMenu {
   transform: translate(500px);
   opacity: 0;
+  z-index: -1;
 }
