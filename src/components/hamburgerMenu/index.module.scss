@@ -1,0 +1,25 @@
+@import "../../scss/variables";
+
+.HamburgerMenu {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: $primary;
+  transition: all 0.5s ease-in;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h3 {
+    cursor: pointer;
+  }
+}
+
+.showMenu {
+  transform: translate(500px);
+  opacity: 0;
+}

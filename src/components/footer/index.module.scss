@@ -18,5 +18,14 @@
   p {
     color: $secondary;
     text-transform: uppercase;
+    cursor: pointer;
+    @media (max-width: 800px) {
+      font-size: 0.8em;
+    }
+
+    span {
+      color: grey;
+      width: 100%;
+    }
   }
 }

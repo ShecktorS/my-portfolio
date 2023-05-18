@@ -3,17 +3,25 @@ import styles from "./App.module.scss";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import MainSection from "./components/mainSection";
+import HamburgerMenu from "./components/hamburgerMenu";
+
+import { useState } from "react";
 
 import { myUserData } from "./userData";
 
 const App: React.FC = () => {
-  console.log(myUserData);
-  // React.FC is an important control who helps us to identify this as a react component
-  return (
-    <div className={styles.App}>
-      <Header />
-      <MainSection myUserData={myUserData} />
+  const isMorning: boolean =
+    +new Date().toLocaleTimeString().split(":")[0] < 20 &&
+    +new Date().toLocaleTimeString().split(":")[0] > 7;
+  const [nightMode] = useState<boolean>(!isMorning);
 
+  const [clickBurger, setClickBurger] = useState<boolean>(false);
+
+  return (
+    <div className={`${styles.App} ${nightMode && styles.nightMode}`}>
+      <Header setClickBurger={setClickBurger} clickBurger={clickBurger} />
+      <HamburgerMenu clickBurger={clickBurger} />
+      <MainSection myUserData={myUserData} />
       <Footer myUserData={myUserData} />
     </div>
   );

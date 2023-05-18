@@ -9,7 +9,8 @@
     transition: all 0.35s ease;
 
     &:hover {
-      color: rgb(243, 226, 131);
+      // color: rgb(255, 245, 187);
+      text-shadow: 0 0 50px rgb(255, 255, 255);
     }
   }
 

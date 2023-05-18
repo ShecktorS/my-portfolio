@@ -1,10 +1,14 @@
 import styles from "./index.module.scss";
 
 import Navbar from "../navbar";
-import { useState } from "react";
 
-const Header = () => {
-  const [clickBurger, setClickBurger] = useState<boolean>(false);
+interface Props {
+  clickBurger: boolean;
+  setClickBurger: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Header: React.FC<Props> = (props) => {
+  const { clickBurger, setClickBurger } = props;
 
   return (
     <div className={styles.Header}>
