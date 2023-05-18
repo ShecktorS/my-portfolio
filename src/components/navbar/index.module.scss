@@ -12,4 +12,8 @@
       color: rgb(243, 226, 131);
     }
   }
+
+  @media (max-width: 800px) {
+    display: none;
+  }
 }

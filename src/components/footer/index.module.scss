@@ -1,0 +1,22 @@
+@import "../../scss/variables";
+
+.Footer {
+  box-sizing: border-box;
+  height: 30px;
+  width: 100vw;
+
+  bottom: 0;
+  left: 0;
+
+  position: fixed;
+  padding: 0 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    color: $secondary;
+    text-transform: uppercase;
+  }
+}

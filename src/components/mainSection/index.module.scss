@@ -1,3 +1,5 @@
+@import "../../scss/variables";
+
 .MainSection {
   box-sizing: border-box;
   display: flex;
@@ -7,7 +9,6 @@
   width: 100%;
   height: 70vh;
   padding: 20px;
-  border: solid red 1px;
 
   .role {
     text-transform: uppercase;
@@ -22,5 +23,27 @@
     letter-spacing: 10px;
     word-break: break;
     text-transform: uppercase;
+  }
+
+  .shortDescription {
+    width: 98%;
+    max-width: 700px;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .curriculumDownload {
+    height: 50px;
+    width: 180px;
+    font-size: 1em;
+    border: none;
+    background-color: $primary-100;
+    color: $secondary;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $primary-200;
+      color: $secondary-100;
+    }
   }
 }

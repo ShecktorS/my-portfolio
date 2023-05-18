@@ -19,5 +19,74 @@
 
   p {
     width: 100px;
+
+    @media (max-width: 800px) {
+      display: none;
+    }
+  }
+
+  .hamburgerContainer {
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+
+    @media (min-width: 800px) {
+      display: none;
+    }
+
+    .hamburger {
+      margin: 25% auto;
+      width: 30px;
+      height: 4px;
+      border-radius: 5px;
+      background-color: white;
+      position: relative;
+      transition: all 0.35s ease;
+
+      &::after {
+        content: "";
+        width: 30px;
+        height: 4px;
+        border-radius: 5px;
+        background-color: white;
+        color: white;
+        position: absolute;
+        top: 9px;
+        right: 0;
+        opacity: 1;
+        transition: all 0.35s ease;
+      }
+
+      &::before {
+        content: "";
+        width: 30px;
+        height: 4px;
+        border-radius: 5px;
+        background-color: white;
+        color: white;
+        position: absolute;
+        top: 18px;
+        right: 0;
+        opacity: 1;
+        transition: all 0.35s ease;
+      }
+    }
+
+    .toCross {
+      transform: translate(20px) rotate(220deg) translate(10px, -20px);
+      // background-color: green;
+
+      &::after {
+        transform: translate(-100px, -50px);
+        filter: blur(5px);
+        opacity: 0;
+        transition-delay: 200ms;
+      }
+
+      &::before {
+        transform: translate(100px, -50px) rotate(97deg) translate(43px, 95px);
+        transition-delay: 200ms;
+      }
+    }
   }
 }

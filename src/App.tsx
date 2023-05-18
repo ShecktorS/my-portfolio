@@ -1,6 +1,7 @@
 import styles from "./App.module.scss";
 
 import Header from "./components/header";
+import Footer from "./components/footer";
 import MainSection from "./components/mainSection";
 
 import { myUserData } from "./userData";
@@ -13,7 +14,7 @@ const App: React.FC = () => {
       <Header />
       <MainSection myUserData={myUserData} />
 
-      <p>Welcome to my Portfolio!</p>
+      <Footer myUserData={myUserData} />
     </div>
   );
 };
