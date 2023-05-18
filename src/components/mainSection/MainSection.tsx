@@ -11,6 +11,17 @@ const MainSection: React.FC<Props> = (props) => {
   const searchCV = () =>
     myUserData.resources.map((item) => item.name === "CV" && item.name);
 
+  const downloadFile = () => {
+    const link = document.createElement("a");
+    link.href = myUserData.resources[0].url;
+    link.target = "_blank";
+    link.setAttribute("download", "Ettore-Sanfilippo-CV.pdf");
+    link.style.display = "none";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className={styles.MainSection}>
       <h4 className={styles.role}>{myUserData.role}</h4>
@@ -18,14 +29,8 @@ const MainSection: React.FC<Props> = (props) => {
         className={styles.name}
       >{`${myUserData.name} ${myUserData.surname}`}</h1>
       <p className={styles.shortDescription}>{myUserData.description}</p>
-      <button className={styles.curriculumDownload}>
+      <button onClick={downloadFile} className={styles.curriculumDownload}>
         Download my {searchCV()}
-        <a
-          href={myUserData.resources[0].url}
-          target="_blank"
-          rel="noopener noreferrer"
-          // TODO: Per risolvere usa axios libreria oppure scarica direttamente il file pdf
-        ></a>
       </button>
     </div>
   );

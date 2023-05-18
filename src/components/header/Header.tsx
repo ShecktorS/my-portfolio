@@ -11,7 +11,7 @@ interface Props {
 const Header: React.FC<Props> = (props) => {
   const { clickBurger, setClickBurger } = props;
 
-  const playSound = (sound: any, volume = 0.3) => {
+  const playSound = (sound: string, volume = 0.3) => {
     const audio = new Audio(sound);
     audio.volume = volume;
     return audio.play();
@@ -24,14 +24,14 @@ const Header: React.FC<Props> = (props) => {
       <p> </p>
       <div
         onClick={() => {
-          setClickBurger((prev) => !prev);
+          setClickBurger((prev: React.SetStateAction<boolean>) => !prev);
           playSound(sound);
         }}
         className={styles.hamburgerContainer}
       >
         <div
           className={`${styles.hamburger} ${clickBurger && styles.toCross}`}
-        ></div>
+        />
       </div>
     </div>
   );

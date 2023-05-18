@@ -3,7 +3,6 @@ import styles from "./index.module.scss";
 import { UserData } from "../../userData";
 
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 
 interface Props {
   myUserData: UserData;
