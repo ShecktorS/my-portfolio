@@ -6,5 +6,10 @@
   li {
     cursor: pointer;
     letter-spacing: 2px;
+    transition: all 0.35s ease;
+
+    &:hover {
+      color: rgb(243, 226, 131);
+    }
   }
 }
