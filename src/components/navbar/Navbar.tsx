@@ -1,14 +1,6 @@
 import styles from "./index.module.scss";
 
-import {
-  Link,
-  Button,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller,
-} from "react-scroll/modules";
+import { Link } from "react-scroll/modules";
 
 const Navbar = () => {
   return (
