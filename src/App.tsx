@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 
 import { myUserData } from "./userData";
 
-import { Link, Button, Element } from "react-scroll/modules";
+import { Element } from "react-scroll/modules";
 
 const App: React.FC = () => {
   // const isMorning: boolean =

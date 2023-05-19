@@ -2,8 +2,6 @@ import { useState } from "react";
 import styles from "./index.module.scss";
 
 const AboutSection: React.FC = () => {
-  const [flipCard, setFlipCard] = useState<boolean>(false);
-
   return (
     <div className={styles.AboutSection}>
       <div className={styles.aboutCard}>
