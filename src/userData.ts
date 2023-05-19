@@ -2,6 +2,7 @@ export interface UserData {
   name: string;
   surname: string;
   role: string;
+  slogan: string[];
   description: string;
   place: string;
   birthday: [number, number, number];
@@ -15,6 +16,12 @@ export const myUserData: UserData = {
   name: "Ettore",
   surname: "Sanfilippo",
   role: "Front-end Web Developer",
+  slogan: [
+    "Esploro nuovi orizzonti con linee di codice intrecciate a creatività",
+    "Armonizzare la creatività: dove la cadenza della vita incontra il flusso del codice",
+    "Innovare. Giocare. Codificare. Ripetere",
+    "Dove la tecnologia si armonizza con la creatività",
+  ],
   description:
     "Sono Ettore, vivo a Bagheria, una città vicino a Palermo, e da diversi anni mi sono appassionato al mondo digitale, scoprendo le infinite possibilità che offre. 💻",
   place: "Palermo",

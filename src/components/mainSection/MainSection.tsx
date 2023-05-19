@@ -28,7 +28,10 @@ const MainSection: React.FC<Props> = (props) => {
       <h1
         className={styles.name}
       >{`${myUserData.name} ${myUserData.surname}`}</h1>
-      <p className={styles.shortDescription}>{myUserData.description}</p>
+      <p className={styles.shortDescription}>
+        {" "}
+        <em>{myUserData.slogan[0]}</em>
+      </p>
       <button onClick={downloadFile} className={styles.curriculumDownload}>
         Download my {searchCV()}
       </button>

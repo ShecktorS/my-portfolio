@@ -1,9 +1,10 @@
 import styles from "./App.module.scss";
 
 import Header from "./components/header";
+import HamburgerMenu from "./components/hamburgerMenu";
 import Footer from "./components/footer";
 import MainSection from "./components/mainSection";
-import HamburgerMenu from "./components/hamburgerMenu";
+import AboutSection from "./components/sections/aboutSection";
 
 import { useState } from "react";
 
@@ -13,7 +14,7 @@ const App: React.FC = () => {
   const isMorning: boolean =
     +new Date().toLocaleTimeString().split(":")[0] < 20 &&
     +new Date().toLocaleTimeString().split(":")[0] > 7;
-  const [nightMode] = useState<boolean>(!isMorning);
+  const [nightMode] = useState<boolean>(true);
 
   const [clickBurger, setClickBurger] = useState<boolean>(false);
 
@@ -22,6 +23,7 @@ const App: React.FC = () => {
       <Header setClickBurger={setClickBurger} clickBurger={clickBurger} />
       <HamburgerMenu clickBurger={clickBurger} />
       <MainSection myUserData={myUserData} />
+      <AboutSection />
       <Footer myUserData={myUserData} />
     </div>
   );
