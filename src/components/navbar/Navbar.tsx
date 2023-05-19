@@ -1,9 +1,21 @@
 import styles from "./index.module.scss";
 
+import {
+  Link,
+  Button,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from "react-scroll/modules";
+
 const Navbar = () => {
   return (
     <ul className={styles.Navbar}>
-      <li>About</li>
+      <Link to="about" spy={true} smooth={true} offset={50} duration={500}>
+        <li>About</li>
+      </Link>
       <li>Skills</li>
       <li>Cases</li>
       <li>Contact</li>

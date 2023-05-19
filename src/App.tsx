@@ -1,14 +1,17 @@
 import styles from "./App.module.scss";
 
+import Loader from "./components/loader";
 import Header from "./components/header";
 import HamburgerMenu from "./components/hamburgerMenu";
 import Footer from "./components/footer";
 import MainSection from "./components/mainSection";
 import AboutSection from "./components/sections/aboutSection";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { myUserData } from "./userData";
+
+import { Link, Button, Element } from "react-scroll/modules";
 
 const App: React.FC = () => {
   // const isMorning: boolean =
@@ -18,13 +21,30 @@ const App: React.FC = () => {
 
   const [clickBurger, setClickBurger] = useState<boolean>(false);
 
+  const [loader, setLoader] = useState<boolean>(true);
+
+  useEffect(() => {
+    const loading = setTimeout(() => setLoader(false), 2500);
+    return () => clearTimeout(loading);
+  });
+
   return (
     <div className={`${styles.App} ${nightMode && styles.nightMode}`}>
-      <Header setClickBurger={setClickBurger} clickBurger={clickBurger} />
-      <HamburgerMenu clickBurger={clickBurger} />
-      <MainSection myUserData={myUserData} />
-      <AboutSection />
-      <Footer myUserData={myUserData} />
+      {loader ? (
+        <div className={styles.loaderContainer}>
+          <Loader />
+        </div>
+      ) : (
+        <>
+          <Header setClickBurger={setClickBurger} clickBurger={clickBurger} />
+          <HamburgerMenu clickBurger={clickBurger} />
+          <MainSection myUserData={myUserData} />
+          <Element name="about">
+            <AboutSection />
+          </Element>
+          <Footer myUserData={myUserData} />
+        </>
+      )}
     </div>
   );
 };

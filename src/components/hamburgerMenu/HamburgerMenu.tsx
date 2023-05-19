@@ -1,6 +1,7 @@
 import styles from "./index.module.scss";
 
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 interface Props {
   clickBurger: boolean;
@@ -8,6 +9,14 @@ interface Props {
 
 const HamburgerMenu: React.FC<Props> = (props) => {
   const { clickBurger } = props;
+
+  console.log(document.body.style.overflow);
+
+  useEffect(() => {
+    clickBurger
+      ? (document.body.style.overflow = "hidden")
+      : (document.body.style.overflow = "");
+  }, [clickBurger]);
 
   return (
     <div
