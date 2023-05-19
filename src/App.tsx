@@ -11,9 +11,9 @@ import { useState } from "react";
 import { myUserData } from "./userData";
 
 const App: React.FC = () => {
-  const isMorning: boolean =
-    +new Date().toLocaleTimeString().split(":")[0] < 20 &&
-    +new Date().toLocaleTimeString().split(":")[0] > 7;
+  // const isMorning: boolean =
+  //   +new Date().toLocaleTimeString().split(":")[0] < 20 &&
+  //   +new Date().toLocaleTimeString().split(":")[0] > 7;
   const [nightMode] = useState<boolean>(true);
 
   const [clickBurger, setClickBurger] = useState<boolean>(false);
