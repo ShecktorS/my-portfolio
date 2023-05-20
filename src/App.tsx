@@ -4,8 +4,13 @@ import Loader from "./components/loader";
 import Header from "./components/header";
 import HamburgerMenu from "./components/hamburgerMenu";
 import Footer from "./components/footer";
+
+// ---------------------------------------
+// IMPORT SECTIONS
+// ---------------------------------------
 import MainSection from "./components/mainSection";
 import AboutSection from "./components/sections/aboutSection";
+import SkillSection from "./components/sections/skillSection";
 
 import { useEffect, useState } from "react";
 
@@ -38,9 +43,14 @@ const App: React.FC = () => {
         <>
           <Header setClickBurger={setClickBurger} clickBurger={clickBurger} />
           <HamburgerMenu clickBurger={clickBurger} />
-          <MainSection myUserData={myUserData} />
+          <Element name="main">
+            <MainSection myUserData={myUserData} />
+          </Element>
           <Element name="about">
-            <AboutSection />
+            <AboutSection myUserData={myUserData} />
+          </Element>
+          <Element name="skill">
+            <SkillSection myUserData={myUserData} />
           </Element>
           <Footer myUserData={myUserData} />
         </>

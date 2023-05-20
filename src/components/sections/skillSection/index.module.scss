@@ -1,0 +1,19 @@
+@import "../../../scss/variables";
+@import "../../../scss/mixins";
+
+.SkillSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+
+  h2 {
+    @include section-title;
+  }
+
+  p {
+    text-align: center;
+    width: 30vw;
+  }
+}
