@@ -1,14 +1,16 @@
 import styles from "./index.module.scss";
 
+import { Link } from "react-scroll/modules";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 
 interface Props {
   clickBurger: boolean;
+  setClickBurger: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const HamburgerMenu: React.FC<Props> = (props) => {
-  const { clickBurger } = props;
+  const { clickBurger, setClickBurger } = props;
 
   console.log(document.body.style.overflow);
 
@@ -28,7 +30,16 @@ const HamburgerMenu: React.FC<Props> = (props) => {
           animate={{ y: -10 }}
           transition={{ delay: 0.2, type: "spring", stiffness: 100 }}
         >
-          About
+          <Link
+            onClick={() => setClickBurger(false)}
+            to="about"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
+          >
+            About
+          </Link>
         </motion.h3>
       )}
       {clickBurger && (
@@ -37,7 +48,16 @@ const HamburgerMenu: React.FC<Props> = (props) => {
           animate={{ y: -10 }}
           transition={{ delay: 0.3, type: "spring", stiffness: 100 }}
         >
-          Skills
+          <Link
+            onClick={() => setClickBurger(false)}
+            to="skill"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={600}
+          >
+            Skills
+          </Link>
         </motion.h3>
       )}
       {clickBurger && (

@@ -42,7 +42,10 @@ const App: React.FC = () => {
       ) : (
         <>
           <Header setClickBurger={setClickBurger} clickBurger={clickBurger} />
-          <HamburgerMenu clickBurger={clickBurger} />
+          <HamburgerMenu
+            setClickBurger={setClickBurger}
+            clickBurger={clickBurger}
+          />
           <Element name="main">
             <MainSection myUserData={myUserData} />
           </Element>

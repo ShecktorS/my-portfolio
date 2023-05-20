@@ -8,7 +8,9 @@ const Navbar = () => {
       <Link to="about" spy={true} smooth={true} offset={50} duration={500}>
         <li>About</li>
       </Link>
-      <li>Skills</li>
+      <Link to="skill" spy={true} smooth={true} offset={50} duration={600}>
+        <li>Skills</li>
+      </Link>
       <li>Cases</li>
       <li>Contact</li>
     </ul>

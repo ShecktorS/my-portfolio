@@ -1,5 +1,7 @@
-import { UserData } from "../../../userData";
 import styles from "./index.module.scss";
+import { UserData } from "../../../userData";
+import React from "react";
+
 import {
   SiHtml5,
   SiCss3,
@@ -8,6 +10,7 @@ import {
   SiJavascript,
   SiTypescript,
   SiReact,
+  SiNodedotjs,
   SiGit,
 } from "react-icons/si";
 
@@ -18,6 +21,18 @@ interface Props {
 const SkillSection: React.FC<Props> = (props) => {
   const { myUserData } = props;
 
+  const icons = [
+    <SiHtml5 />,
+    <SiCss3 />,
+    <SiJavascript />,
+    <SiSass />,
+    <SiCssmodules />,
+    <SiTypescript />,
+    <SiReact />,
+    <SiNodedotjs />,
+    <SiGit />,
+  ];
+
   return (
     <div className={styles.SkillSection}>
       <h2>Skills</h2>
@@ -26,7 +41,26 @@ const SkillSection: React.FC<Props> = (props) => {
         frameworks. Sono sempre alla ricerca di una nuova sfida per potermi
         mettere alla prova.
       </p>
-      <div>{myUserData.skills[0]}</div>
+      <div className={styles.script}>
+        {myUserData.skills
+          .filter((skill) => skill.type === "script")
+          .map((skill) => (
+            <div className={styles.skill} key={skill.id}>
+              <div>{icons[skill.id - 1]}</div>
+              <p>{skill.name}</p>
+            </div>
+          ))}
+      </div>
+      <div className={styles.otherScript}>
+        {myUserData.skills
+          .filter((skill) => skill.type !== "script")
+          .map((skill) => (
+            <div className={styles.skill} key={skill.id}>
+              <div>{icons[skill.id - 1]}</div>
+              <p>{skill.name}</p>
+            </div>
+          ))}
+      </div>
     </div>
   );
 };

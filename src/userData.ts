@@ -7,7 +7,7 @@ export interface UserData {
   about: string[];
   place: string;
   birthday: [number, number, number];
-  skills: { type: string; skills: { name: string; icon: string }[] }[];
+  skills: { type: string; name: string; id: number }[];
   projects: object[];
   hobbies: string[];
   resources: { name: string; url: string; type: string }[];
@@ -32,33 +32,15 @@ export const myUserData: UserData = {
   place: "Palermo",
   birthday: [24, 1, 1996],
   skills: [
-    {
-      type: "script",
-      skills: [
-        { name: "HTML", icon: "SiHtml5" },
-        { name: "CSS", icon: "SiCss3" },
-        { name: "JavaScript", icon: "SiJavascript" },
-      ],
-    },
-    // {
-    //   SiHtml5,
-    //   SiCss3,
-    //   SiSass,
-    //   SiCssmodules,
-    //   SiJavascript,
-    //   SiTypescript,
-    //   SiReact,
-    //   SiGit,
-    // }
-    // ,
-    // "CSS",
-    // "JavaScript",
-    // "TypeScript",
-    // "SASS",
-    // "SCSS",
-    // "React",
-    // "Node",
-    // "Git",
+    { type: "script", name: "HTML 5", id: 1 },
+    { type: "script", name: "CSS 3", id: 2 },
+    { type: "script", name: "JavaScript", id: 3 },
+    { type: "preProcessor", name: "SASS", id: 4 },
+    { type: "other", name: "CSS modules", id: 5 },
+    { type: "superSet", name: "TypeScript", id: 6 },
+    { type: "framework", name: "React", id: 7 },
+    { type: "other", name: "Node", id: 8 },
+    { type: "other", name: "Git", id: 9 },
   ],
   projects: [{}, {}, {}],
   hobbies: ["Origami", "Disegno", "Musica"],
