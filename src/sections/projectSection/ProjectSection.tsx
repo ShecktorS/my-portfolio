@@ -15,15 +15,10 @@ interface Props {
 }
 
 const ProjectSection: React.FC<Props> = (props) => {
-  const pippo = [1, 2, 3, 4, 5];
-
   const { myUserData } = props;
 
   return (
-    <div
-      className={styles.ProjectSection}
-      onResize={() => console.log("Pippo")}
-    >
+    <div className={styles.ProjectSection}>
       <h2>Projects</h2>
       <p>
         Questi sono i progetti che ho sviluppato nel corso della mia esperienza
