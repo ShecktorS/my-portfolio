@@ -1,5 +1,5 @@
 import styles from "./index.module.scss";
-import { UserData } from "../../../userData";
+import { UserData } from "../../userData";
 import React from "react";
 
 import {

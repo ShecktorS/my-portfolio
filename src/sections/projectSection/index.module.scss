@@ -1,0 +1,9 @@
+.ProjectSection {
+  padding: 0 50px;
+  margin: 0 100px;
+
+  & > h2,
+  & > p {
+    text-align: center;
+  }
+}

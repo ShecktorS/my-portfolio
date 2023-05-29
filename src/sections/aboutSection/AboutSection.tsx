@@ -1,4 +1,4 @@
-import { UserData } from "../../../userData";
+import { UserData } from "../../userData";
 import styles from "./index.module.scss";
 
 interface Props {

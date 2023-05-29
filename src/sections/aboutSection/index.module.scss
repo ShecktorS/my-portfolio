@@ -1,5 +1,5 @@
-@import "../../../scss/variables";
-@import "../../../scss/mixins";
+@import "../../scss/variables";
+@import "../../scss/mixins";
 
 .AboutSection {
   display: flex;
@@ -31,17 +31,16 @@
       }
 
       .about1 {
-        flex-grow: 1;
-        width: 100%;
-
         h2 {
           @include section-title;
         }
       }
 
-      .about2 {
+      .about2,
+      .about1 {
         flex-grow: 1;
         width: 100%;
+        text-align: justify;
       }
     }
 

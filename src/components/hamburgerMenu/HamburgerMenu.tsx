@@ -66,7 +66,16 @@ const HamburgerMenu: React.FC<Props> = (props) => {
           animate={{ y: -10 }}
           transition={{ delay: 0.4, type: "spring", stiffness: 100 }}
         >
-          Cases
+          <Link
+            onClick={() => setClickBurger(false)}
+            to="projects"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={700}
+          >
+            Projects
+          </Link>
         </motion.h3>
       )}
       {clickBurger && (
@@ -75,7 +84,16 @@ const HamburgerMenu: React.FC<Props> = (props) => {
           animate={{ y: -10 }}
           transition={{ delay: 0.5, type: "spring", stiffness: 100 }}
         >
-          Contact
+          <Link
+            onClick={() => setClickBurger(false)}
+            to="contact"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={800}
+          >
+            Contact
+          </Link>
         </motion.h3>
       )}
     </div>

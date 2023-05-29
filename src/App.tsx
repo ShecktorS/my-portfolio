@@ -8,15 +8,17 @@ import Footer from "./components/footer";
 // ---------------------------------------
 // IMPORT SECTIONS
 // ---------------------------------------
-import MainSection from "./components/mainSection";
-import AboutSection from "./components/sections/aboutSection";
-import SkillSection from "./components/sections/skillSection";
+import MainSection from "./sections/mainSection";
+import AboutSection from "./sections/aboutSection";
+import SkillSection from "./sections/skillSection";
+import ContactSection from "./sections/contactSection";
 
 import { useEffect, useState } from "react";
 
 import { myUserData } from "./userData";
 
 import { Element } from "react-scroll/modules";
+import ProjectSection from "./sections/projectSection";
 
 const App: React.FC = () => {
   // const isMorning: boolean =
@@ -54,6 +56,12 @@ const App: React.FC = () => {
           </Element>
           <Element name="skill">
             <SkillSection myUserData={myUserData} />
+          </Element>
+          <Element name="projects">
+            <ProjectSection myUserData={myUserData} />
+          </Element>
+          <Element name="contact">
+            <ContactSection />
           </Element>
           <Footer myUserData={myUserData} />
         </>

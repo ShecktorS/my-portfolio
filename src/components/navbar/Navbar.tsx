@@ -11,8 +11,12 @@ const Navbar = () => {
       <Link to="skill" spy={true} smooth={true} offset={50} duration={600}>
         <li>Skills</li>
       </Link>
-      <li>Cases</li>
-      <li>Contact</li>
+      <Link to="projects" spy={true} smooth={true} offset={50} duration={700}>
+        <li>Projects</li>
+      </Link>
+      <Link to="contact" spy={true} smooth={true} offset={50} duration={800}>
+        <li>Contact</li>
+      </Link>
     </ul>
   );
 };
