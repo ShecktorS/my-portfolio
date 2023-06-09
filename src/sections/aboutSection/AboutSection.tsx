@@ -25,7 +25,7 @@ const AboutSection: React.FC<Props> = (props) => {
         <div className={styles.imageContainer}>
           <img
             className={styles.image}
-            src="https://picsum.photos/800/800"
+            src="https://i.postimg.cc/KjSj3Bg8/20161221-113725-1.jpg"
             alt="image me"
           />
         </div>

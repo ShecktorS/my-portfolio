@@ -70,7 +70,7 @@ export const myUserData: UserData = {
       title: "Movintage",
       description: "",
       demo: null,
-      link: "https://movintage.vercel.app",
+      link: "https://github.com/ShecktorS/MOVINTAGE",
       image: "https://i.postimg.cc/Gp0MSN7j/Progetto-senza-titolo-2.png",
     },
   ],

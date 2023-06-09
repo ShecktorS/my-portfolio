@@ -1,7 +1,8 @@
 .ProjectCard {
   position: relative;
   height: 500px;
-  width: 100%;
+  min-width: 400px;
+  // width: 500px;
 
   .projectImage {
     height: 100%;
@@ -34,9 +35,6 @@
       flex-direction: column;
       justify-content: space-between;
       padding: 0 30px;
-
-      .description {
-      }
 
       .buttons {
         display: flex;

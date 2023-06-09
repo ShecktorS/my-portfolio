@@ -16,14 +16,19 @@ const ProjectCard: React.FC<Props> = (props) => {
       />
 
       <div>
-        <div className={styles.space}></div>
+        <div className={styles.space} />
         <div className={styles.content}>
           <h2 className={styles.title}>{data.title}</h2>
           <p className={styles.description}>
             {data.description?.split(".")[0]}
           </p>
           <div className={styles.buttons}>
-            <button className={styles.Demo}>
+            <button
+              onClick={() => {
+                data.demo === null && alert("Errore nel caricamento");
+              }}
+              className={styles.Demo}
+            >
               <a href={data.demo} target="_blank">
                 Link
               </a>

@@ -10,8 +10,15 @@ const ContactSection = () => {
         <p>ettoresanfilippo.it</p>
       </div>
       <div>
-        <p>My Github</p>
-        <p>My LinkedIn</p>
+        <a href="https://github.com/ShecktorS" target="_blank">
+          <p>My Github</p>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/ettore-sanfilippo/"
+          target="_blank"
+        >
+          <p>My LinkedIn</p>
+        </a>
       </div>
     </div>
   );

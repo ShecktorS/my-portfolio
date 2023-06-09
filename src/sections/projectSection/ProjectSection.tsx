@@ -25,14 +25,11 @@ const ProjectSection: React.FC<Props> = (props) => {
         da Frontend Developer
       </p>
       <Swiper
-        spaceBetween={150}
-        slidesPerView={1}
+        spaceBetween={100}
+        slidesPerView="auto"
         grabCursor={true}
-        loop={true}
+        loop
         effect="fade"
-        navigation
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
       >
         {myUserData.projects.map((item, id) => (
           <SwiperSlide key={id}>
