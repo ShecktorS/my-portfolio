@@ -31,21 +31,14 @@ const ProjectCard: React.FC<Props> = (props) => {
             {data.description?.split(".")[0]}
           </p>
           <div className={styles.buttons}>
-            <button
-              onClick={() => {
-                data.demo === null && alert("Errore nel caricamento");
-              }}
-              className={styles.Demo}
-            >
-              <a href={data.demo ?? undefined} target="_blank" rel="noreferrer">
+            {data.demo && (
+              <a href={data.demo} target="_blank" rel="noreferrer">
                 <FaExternalLinkAlt /> Demo
               </a>
-            </button>
-            <button className={styles.github}>
-              <a href={data.link} target="_blank" rel="noreferrer">
-                <FaGithub /> Code
-              </a>
-            </button>
+            )}
+            <a href={data.link} target="_blank" rel="noreferrer">
+              <FaGithub /> Code
+            </a>
           </div>
         </div>
       </div>
