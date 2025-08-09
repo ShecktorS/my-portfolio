@@ -8,7 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import "swiper/css/effect-fade";
 
-import ProjectCard from "../../components/projectCard";
+import ProjectCard, { ProjectData } from "../../components/projectCard";
 
 interface Props {
   myUserData: UserData;
@@ -33,7 +33,7 @@ const ProjectSection: React.FC<Props> = (props) => {
       >
         {myUserData.projects.map((item, id) => (
           <SwiperSlide key={id}>
-            <ProjectCard data={item} />
+            <ProjectCard data={item as ProjectData} />
           </SwiperSlide>
         ))}
       </Swiper>

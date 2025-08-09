@@ -1,7 +1,15 @@
 import styles from "./index.module.scss";
 
+export interface ProjectData {
+  title: string;
+  description: string;
+  demo: string | null;
+  link: string;
+  image: string;
+}
+
 interface Props {
-  data: any;
+  data: ProjectData;
 }
 
 const ProjectCard: React.FC<Props> = (props) => {
@@ -29,7 +37,7 @@ const ProjectCard: React.FC<Props> = (props) => {
               }}
               className={styles.Demo}
             >
-              <a href={data.demo} target="_blank">
+              <a href={data.demo ?? undefined} target="_blank">
                 Link
               </a>
             </button>
