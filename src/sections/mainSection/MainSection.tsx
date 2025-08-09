@@ -1,5 +1,6 @@
 import styles from "./index.module.scss";
 import { UserData } from "../../userData";
+import Typewriter from "../../components/typewriter";
 
 interface Props {
   myUserData: UserData;
@@ -9,7 +10,7 @@ const MainSection: React.FC<Props> = (props) => {
   const { myUserData } = props;
 
   const searchCV = () =>
-    myUserData.resources.map((item) => item.name === "CV" && item.name);
+    myUserData.resources.find((item) => item.name === "CV")?.name ?? "CV";
 
   const downloadFile = () => {
     const link = document.createElement("a");
@@ -30,7 +31,9 @@ const MainSection: React.FC<Props> = (props) => {
       >{`${myUserData.name} ${myUserData.surname}`}</h1>
       <p className={styles.shortDescription}>
         {" "}
-        <em>{myUserData.slogan[0]}</em>
+        <em>
+          <Typewriter text={myUserData.slogan[0]} />
+        </em>
       </p>
       <button onClick={downloadFile} className={styles.curriculumDownload}>
         Download my {searchCV()}

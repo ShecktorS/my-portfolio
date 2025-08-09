@@ -1,3 +1,4 @@
-import ProjectCard from "./ProjectCard";
+import ProjectCard, { ProjectData } from "./ProjectCard";
 
+export type { ProjectData };
 export default ProjectCard;
