@@ -73,6 +73,22 @@ export const myUserData: UserData = {
       link: "https://github.com/ShecktorS/MOVINTAGE",
       image: "https://i.postimg.cc/Gp0MSN7j/Progetto-senza-titolo-2.png",
     },
+    {
+      title: "Weather App",
+      description:
+        "Applicazione meteo che fornisce aggiornamenti in tempo reale basati sulle API di OpenWeather.",
+      demo: "https://weather-app-shecktors.vercel.app",
+      link: "https://github.com/ShecktorS/weather-app",
+      image: "https://via.placeholder.com/400x500.png?text=Weather+App",
+    },
+    {
+      title: "Pokedex",
+      description:
+        "Pokedex interattiva per esplorare e cercare Pokémon tramite la PokeAPI.",
+      demo: "https://pokedex-shecktors.vercel.app",
+      link: "https://github.com/ShecktorS/Pokedex",
+      image: "https://via.placeholder.com/400x500.png?text=Pokedex",
+    },
   ],
   hobbies: ["Origami", "Disegno", "Musica"],
   resources: [

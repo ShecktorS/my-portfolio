@@ -1,4 +1,5 @@
 import styles from "./index.module.scss";
+import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
 export interface ProjectData {
   title: string;
@@ -14,7 +15,6 @@ interface Props {
 
 const ProjectCard: React.FC<Props> = (props) => {
   const { data } = props;
-  console.log(data);
   return (
     <div className={styles.ProjectCard}>
       <img
@@ -37,13 +37,13 @@ const ProjectCard: React.FC<Props> = (props) => {
               }}
               className={styles.Demo}
             >
-              <a href={data.demo ?? undefined} target="_blank">
-                Link
+              <a href={data.demo ?? undefined} target="_blank" rel="noreferrer">
+                <FaExternalLinkAlt /> Demo
               </a>
             </button>
             <button className={styles.github}>
-              <a href={data.link} target="_blank">
-                Github
+              <a href={data.link} target="_blank" rel="noreferrer">
+                <FaGithub /> Code
               </a>
             </button>
           </div>
