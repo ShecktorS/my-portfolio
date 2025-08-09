@@ -13,11 +13,32 @@
     justify-content: center;
     gap: 10px;
   }
+  .sliderWrapper {
+    position: relative;
+  }
 
-  .projectsGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  .projectsSlider {
+    overflow: hidden;
+    display: flex;
     gap: 2rem;
-    justify-items: center;
+    scroll-behavior: smooth;
+  }
+
+  .control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+
+  .left {
+    left: 0;
+  }
+
+  .right {
+    right: 0;
   }
 }
