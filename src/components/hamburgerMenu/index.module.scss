@@ -6,7 +6,8 @@
   position: fixed;
   top: 0;
   right: 0;
-  background-color: $primary;
+  background-color: rgba($primary, 0.95);
+  backdrop-filter: blur(4px);
   transition: all 0.5s ease-in;
   z-index: 1;
 
@@ -21,7 +22,7 @@
 }
 
 .showMenu {
-  transform: translate(500px);
+  transform: translateX(100%);
   opacity: 0;
   z-index: -1;
 }
