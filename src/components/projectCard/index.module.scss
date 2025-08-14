@@ -1,3 +1,4 @@
+@import "../../scss/variables";
 
 .ProjectCard {
   position: relative;
@@ -50,6 +51,19 @@
       flex-direction: column;
       justify-content: space-between;
       padding: 0 20px 20px;
+
+      .title {
+        margin: 0 0 8px;
+        font-size: 1.4rem;
+        color: $secondary;
+      }
+
+      .description {
+        margin: 0;
+        font-size: 0.95rem;
+        line-height: 1.4;
+        color: rgba($secondary, 0.85);
+      }
 
       .buttons {
         display: flex;
