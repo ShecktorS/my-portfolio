@@ -15,7 +15,7 @@ import ProjectSection from "./sections/projectSection";
 
 import { useEffect, useState } from "react";
 import { myUserData } from "./userData";
-import { Element } from "react-scroll/modules";
+import { Element } from "react-scroll";
 
 const App: React.FC = () => {
   const [clickBurger, setClickBurger] = useState<boolean>(false);

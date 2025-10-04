@@ -1,6 +1,6 @@
 import styles from "./index.module.scss";
 
-import { Link } from "react-scroll/modules";
+import { Link } from "react-scroll";
 
 const Navbar = () => {
   return (
