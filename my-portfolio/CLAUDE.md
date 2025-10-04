@@ -43,3 +43,18 @@ npm run preview  # Preview build locale
 - **Loader**: timeout fisso di 2500ms all'avvio
 - **Audio feedback**: click sound su hamburger menu (`src/sounds/mouse-click.mp3`)
 - **UserData interface**: fortemente tipizzata, rispettare la struttura quando si aggiungono progetti/skills
+
+## Preferenze Utente
+
+- Mi piace che quando finisci di lavorare mi fai il push
+
+## Future Improvements
+
+### API REST per userData
+In futuro, migrare da mock statico (userData.ts) a API REST usando **Vercel Serverless Functions**:
+- `/api/user` - info personali
+- `/api/projects` - lista progetti
+- `/api/skills` - skills
+- `/api/resources` - CV e link social
+
+Vantaggi: già integrato con Vercel, zero configurazione extra, gratuito, stesso repo.

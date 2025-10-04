@@ -16,7 +16,8 @@
       "Bash(git branch:*)",
       "Bash(move my-portfolio.node-version .node-version)",
       "Bash(mv:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(code:*)"
     ],
     "deny": [],
     "ask": []
