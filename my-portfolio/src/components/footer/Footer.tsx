@@ -15,38 +15,31 @@ const Footer: React.FC<Props> = (props) => {
   const [placeClicks, setPlaceClicks] = useState<number>(0);
   const [showModal, setShowModal] = useState<boolean>(false);
 
-  const hours: number = new Date().getHours();
-  const minutes: string =
-    new Date().getMinutes().toString().length < 2
-      ? "0" + new Date().getMinutes().toString()
-      : new Date().getMinutes().toString();
-  const seconds: string =
-    new Date().getSeconds().toString().length < 2
-      ? "0" + new Date().getSeconds().toString()
-      : new Date().getSeconds().toString();
-
   const [time, setTime] = useState<{
     hours: number;
     minutes: string;
     seconds: string;
-  }>({
-    hours: hours,
-    minutes: minutes,
-    seconds: seconds,
+  }>(() => {
+    const now = new Date();
+    return {
+      hours: now.getHours(),
+      minutes: now.getMinutes().toString().padStart(2, "0"),
+      seconds: now.getSeconds().toString().padStart(2, "0"),
+    };
   });
 
   useEffect(() => {
-    const timer = setInterval(
-      () =>
-        setTime({
-          hours: hours,
-          minutes: minutes,
-          seconds: seconds,
-        }),
-      500
-    );
+    const timer = setInterval(() => {
+      const now = new Date();
+      setTime({
+        hours: now.getHours(),
+        minutes: now.getMinutes().toString().padStart(2, "0"),
+        seconds: now.getSeconds().toString().padStart(2, "0"),
+      });
+    }, 1000);
+
     return () => clearInterval(timer);
-  }, [hours, minutes, seconds]);
+  }, []);
 
   const handlePlaceClick = () => {
     const newCount = placeClicks + 1;

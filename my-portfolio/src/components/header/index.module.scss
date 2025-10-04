@@ -22,6 +22,12 @@
     margin: $space-2;
   }
 
+  @media (max-width: 600px) {
+    height: 70px;
+    padding: 0 $space-3;
+    margin: $space-2 $space-1;
+  }
+
   h3 {
     @include body-large;
     font-weight: $font-bold;
@@ -34,6 +40,11 @@
 
     @media (max-width: $breakpoint-sm) {
       font-size: $text-base;
+    }
+
+    @media (max-width: 600px) {
+      font-size: $text-sm;
+      letter-spacing: -0.02em;
     }
   }
 

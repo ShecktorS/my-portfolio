@@ -3,6 +3,7 @@ import sound from "../../sounds/mouse-click.mp3";
 
 import Navbar from "../navbar";
 import ThemeToggle from "../themeToggle/ThemeToggle";
+import { useEffect, useRef } from "react";
 
 interface Props {
   clickBurger: boolean;
@@ -11,15 +12,31 @@ interface Props {
 
 const Header: React.FC<Props> = (props) => {
   const { clickBurger, setClickBurger } = props;
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  const playSound = (sound: string, volume = 0.3) => {
-    const audio = new Audio(sound);
-    audio.volume = volume;
-    return audio.play();
+  useEffect(() => {
+    audioRef.current = new Audio(sound);
+    audioRef.current.volume = 0.3;
+
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current = null;
+      }
+    };
+  }, []);
+
+  const playSound = () => {
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0;
+      audioRef.current.play().catch(() => {
+        // Ignora errori se l'audio non può essere riprodotto
+      });
+    }
   };
 
   return (
-    <div className={styles.Header}>
+    <div className={`${styles.Header} ${clickBurger ? styles.menuOpen : ''}`}>
       <h3>Ettore Sanfilippo</h3>
       <Navbar />
       <div className={styles.rightSection}>
@@ -28,7 +45,7 @@ const Header: React.FC<Props> = (props) => {
       <div
         onClick={() => {
           setClickBurger((prev: React.SetStateAction<boolean>) => !prev);
-          playSound(sound);
+          playSound();
         }}
         className={styles.hamburgerContainer}
       >

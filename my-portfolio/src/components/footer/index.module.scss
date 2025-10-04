@@ -80,6 +80,21 @@
       transform: scale(1.05);
     }
   }
+
+  @media (max-width: 600px) {
+    padding: 24px 20px;
+    max-width: 85%;
+
+    p {
+      font-size: 1.1em;
+      margin-bottom: 16px;
+    }
+
+    button {
+      padding: 8px 24px;
+      font-size: 0.9em;
+    }
+  }
 }
 
 @keyframes fadeIn {
