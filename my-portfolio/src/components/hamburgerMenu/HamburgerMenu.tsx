@@ -1,7 +1,7 @@
 import styles from "./index.module.scss";
 
 import { Link } from "react-scroll";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import ThemeToggle from "../themeToggle/ThemeToggle";
 
 interface Props {
@@ -13,8 +13,14 @@ const HamburgerMenu: React.FC<Props> = (props) => {
   const { clickBurger, setClickBurger } = props;
 
   const [isAnimating, setIsAnimating] = useState(false);
+  const isFirstMount = useRef(true);
 
   useEffect(() => {
+    if (isFirstMount.current) {
+      isFirstMount.current = false;
+      return;
+    }
+
     clickBurger
       ? (document.body.style.overflow = "hidden")
       : (document.body.style.overflow = "");

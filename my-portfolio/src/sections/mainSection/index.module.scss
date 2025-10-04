@@ -49,6 +49,8 @@
     color: $neutral-900;
     line-height: $leading-relaxed;
     animation: slideUp 0.8s $ease-out-back 0.5s both;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 
     em {
       color: $accent-primary;
