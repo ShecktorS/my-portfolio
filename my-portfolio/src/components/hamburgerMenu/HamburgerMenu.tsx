@@ -2,6 +2,7 @@ import styles from "./index.module.scss";
 
 import { Link } from "react-scroll/modules";
 import { useEffect, useState } from "react";
+import ThemeToggle from "../themeToggle/ThemeToggle";
 
 interface Props {
   clickBurger: boolean;
@@ -86,7 +87,6 @@ const HamburgerMenu: React.FC<Props> = (props) => {
             className={`${styles.menuItem} ${
               clickBurger ? styles.menuItemEnter : styles.menuItemExit
             }`}
-            onAnimationEnd={handleAnimationEnd}
           >
             <Link
               onClick={() => setClickBurger(false)}
@@ -99,6 +99,14 @@ const HamburgerMenu: React.FC<Props> = (props) => {
               Contact
             </Link>
           </h3>
+          <div
+            className={`${styles.menuItem} ${styles.themeToggleContainer} ${
+              clickBurger ? styles.menuItemEnter : styles.menuItemExit
+            }`}
+            onAnimationEnd={handleAnimationEnd}
+          >
+            <ThemeToggle />
+          </div>
         </>
       )}
     </div>
