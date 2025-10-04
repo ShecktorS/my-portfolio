@@ -55,3 +55,9 @@
     }
   }
 }
+
+// Dark theme adjustments
+[data-theme="dark"] .AboutSection .aboutCard {
+  background-color: $primary-800;
+  color: $neutral-200;
+}
