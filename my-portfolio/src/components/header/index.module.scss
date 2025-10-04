@@ -1,0 +1,119 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.Header {
+  @include flex-between;
+  position: sticky;
+  top: 0;
+  z-index: $z-fixed;
+  height: 80px;
+  padding: 0 $space-6;
+  margin: $space-4 $space-4 0;
+  border-radius: $radius-lg;
+
+  // Glassmorphism effect
+  @include glass-effect(0.8);
+  backdrop-filter: blur(12px);
+  box-shadow: $shadow-lg;
+  transition: all $duration-base $ease-in-out-smooth;
+
+  @media (max-width: $breakpoint-md) {
+    padding: 0 $space-4;
+    margin: $space-2;
+  }
+
+  h3 {
+    @include body-large;
+    font-weight: $font-bold;
+    font-family: $font-display;
+    letter-spacing: $tracking-tight;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin: 0;
+
+    @media (max-width: $breakpoint-sm) {
+      font-size: $text-base;
+    }
+  }
+
+  // Container for theme toggle (desktop)
+  .rightSection {
+    @include flex-center;
+    gap: $space-4;
+
+    @media (max-width: 800px) {
+      display: none;
+    }
+  }
+
+  // Hamburger menu
+  .hamburgerContainer {
+    @include flex-center;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    z-index: $z-modal;
+    position: relative;
+    border-radius: $radius-md;
+    transition: background-color $duration-base ease;
+
+    &:hover {
+      background-color: rgba($accent-primary, 0.1);
+    }
+
+    @media (min-width: 800px) {
+      display: none;
+    }
+
+    .hamburger {
+      position: relative;
+      width: 30px;
+      height: 3px;
+      border-radius: $radius-full;
+      background-color: var(--text-primary);
+      transition: all 0.35s $ease-in-out-smooth;
+
+      &::after,
+      &::before {
+        content: "";
+        position: absolute;
+        width: 30px;
+        height: 3px;
+        border-radius: $radius-full;
+        background-color: var(--text-primary);
+        right: 0;
+        transition: all 0.35s $ease-in-out-smooth;
+      }
+
+      &::after {
+        top: -9px;
+      }
+
+      &::before {
+        top: 9px;
+      }
+    }
+
+    .toCross {
+      background-color: transparent;
+      transform: rotate(45deg);
+
+      &::after {
+        top: 0;
+        transform: rotate(90deg);
+      }
+
+      &::before {
+        top: 0;
+        transform: rotate(0deg);
+      }
+    }
+  }
+}
+
+// Dark theme adjustments
+[data-theme="dark"] .Header {
+  background: rgba($primary-800, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}

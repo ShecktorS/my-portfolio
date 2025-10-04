@@ -1,0 +1,32 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.themeToggle {
+  @include button-base;
+  background: rgba($accent-primary, 0.1);
+  color: $accent-primary;
+  padding: $space-2;
+  border-radius: $radius-full;
+  width: 2.5rem;
+  height: 2.5rem;
+  transition: all $duration-base $ease-in-out-smooth;
+
+  .icon {
+    font-size: $text-lg;
+    transition: transform $duration-base $ease-in-out-smooth;
+  }
+
+  &:hover:not(:disabled) {
+    background: $gradient-primary;
+    color: white;
+    transform: scale(1.1);
+
+    .icon {
+      transform: rotate(20deg);
+    }
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}

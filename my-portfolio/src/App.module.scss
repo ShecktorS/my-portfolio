@@ -1,0 +1,55 @@
+@import "./scss/variables";
+@import "./scss/mixins";
+
+.App {
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  position: relative;
+  transition: background-color 300ms ease, color 300ms ease;
+
+  // Subtle gradient overlay for depth
+  &::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+      circle at top right,
+      rgba($accent-primary, 0.05) 0%,
+      transparent 50%
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  // All content on top of gradient
+  & > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .loaderContainer {
+    @include flex-center;
+    min-height: 100vh;
+    padding: $space-8;
+  }
+}
+
+// Dark theme specific styles
+[data-theme="dark"] .App {
+  &::before {
+    background: radial-gradient(
+      circle at top right,
+      rgba($accent-primary, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba($accent-secondary, 0.08) 0%,
+      transparent 50%
+    );
+  }
+}

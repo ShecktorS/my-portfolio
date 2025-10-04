@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git checkout:*)",
+      "Bash(npm outdated)",
+      "Bash(npm uninstall:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npm run build:*)",
+      "Bash(npx sass:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git config user.name \"Ettore Sanfilippo\")",
+      "Bash(git config user.email \"ettoresanfilippo@gmail.com\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

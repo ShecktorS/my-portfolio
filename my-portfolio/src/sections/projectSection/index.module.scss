@@ -1,0 +1,174 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.ProjectSection {
+  padding: $section-padding-mobile $space-5;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  @media (min-width: $breakpoint-md) {
+    padding: $section-padding-tablet $space-8;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    padding: $section-padding-desktop $space-12;
+  }
+
+  // Header
+  & > h2,
+  & > p {
+    text-align: center;
+    margin-bottom: $space-8;
+  }
+
+  & > h2 {
+    @include heading-1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $space-4;
+    margin-top: 0;
+    margin-bottom: $space-6;
+    background: $gradient-primary;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    svg {
+      -webkit-text-fill-color: $accent-primary;
+    }
+  }
+
+  & > p {
+    @include body-large;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: $space-12;
+  }
+
+  // Carousel Container
+  .carouselContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: $space-4;
+    margin-bottom: $space-8;
+
+    @media (min-width: $breakpoint-md) {
+      gap: $space-6;
+    }
+  }
+
+  // Navigation Buttons
+  .navButton {
+    @include button-base;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $gradient-primary;
+    color: white;
+    border: none;
+    border-radius: $radius-lg;
+    cursor: pointer;
+    font-size: $text-xl;
+    transition: all $duration-base $ease-in-out-smooth;
+    z-index: $z-dropdown;
+    box-shadow: $shadow-lg;
+
+    &:hover:not(:disabled) {
+      transform: scale(1.1);
+      box-shadow: 0 12px 24px rgba($accent-primary, 0.4);
+    }
+
+    &:active:not(:disabled) {
+      transform: scale(0.95);
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      background: var(--bg-tertiary);
+      color: var(--text-disabled);
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      width: 40px;
+      height: 40px;
+      font-size: $text-lg;
+    }
+  }
+
+  // Carousel Wrapper (overflow container)
+  .carouselWrapper {
+    flex: 1;
+    overflow: hidden;
+    border-radius: $radius-xl;
+  }
+
+  // Carousel Track (sliding container)
+  .carouselTrack {
+    display: flex;
+    transition: transform $duration-slow $ease-in-out-smooth;
+    gap: $space-6;
+
+    @media (max-width: $breakpoint-md) {
+      gap: $space-4;
+    }
+  }
+
+  // Carousel Slide
+  .carouselSlide {
+    padding: 0 $space-3;
+    box-sizing: border-box;
+
+    @media (max-width: $breakpoint-sm) {
+      padding: 0 $space-2;
+    }
+  }
+
+  // Dots Container
+  .dotsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: $space-3;
+    margin-top: $space-8;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: $radius-full;
+    border: 2px solid var(--border-color);
+    background: transparent;
+    cursor: pointer;
+    transition: all $duration-base $ease-in-out-smooth;
+    padding: 0;
+
+    &:hover {
+      border-color: $accent-primary;
+      transform: scale(1.2);
+    }
+
+    &.dotActive {
+      background: $gradient-primary;
+      border-color: transparent;
+      width: 32px;
+      border-radius: $radius-full;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      width: 10px;
+      height: 10px;
+
+      &.dotActive {
+        width: 24px;
+      }
+    }
+  }
+}

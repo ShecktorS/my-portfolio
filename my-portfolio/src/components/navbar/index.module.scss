@@ -1,0 +1,20 @@
+.Navbar {
+  display: flex;
+  list-style-type: none;
+  gap: 55px;
+
+  li {
+    cursor: pointer;
+    letter-spacing: 2px;
+    transition: all 0.35s ease;
+
+    &:hover {
+      // color: rgb(255, 245, 187);
+      text-shadow: 0 0 50px rgb(255, 255, 255);
+    }
+  }
+
+  @media (max-width: 800px) {
+    display: none;
+  }
+}

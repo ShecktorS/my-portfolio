@@ -1,0 +1,45 @@
+import styles from "./index.module.scss";
+import { UserData } from "../../userData";
+import Typewriter from "../../components/typewriter";
+
+interface Props {
+  myUserData: UserData;
+}
+
+const MainSection: React.FC<Props> = (props) => {
+  const { myUserData } = props;
+
+  const searchCV = () =>
+    myUserData.resources.find((item) => item.name === "CV")?.name ?? "CV";
+
+  const downloadFile = () => {
+    const link = document.createElement("a");
+    link.href = myUserData.resources[0].url;
+    link.target = "_blank";
+    link.setAttribute("download", "Ettore-Sanfilippo-CV.pdf");
+    link.style.display = "none";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  return (
+    <div className={styles.MainSection}>
+      <h4 className={styles.role}>{myUserData.role}</h4>
+      <h1
+        className={styles.name}
+      >{`${myUserData.name} ${myUserData.surname}`}</h1>
+      <p className={styles.shortDescription}>
+        {" "}
+        <em>
+          <Typewriter text={myUserData.slogan[0]} />
+        </em>
+      </p>
+      <button onClick={downloadFile} className={styles.curriculumDownload}>
+        Download my {searchCV()}
+      </button>
+    </div>
+  );
+};
+
+export default MainSection;

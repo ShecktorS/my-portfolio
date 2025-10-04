@@ -1,0 +1,149 @@
+@import "scss/variables";
+@import "scss/mixins";
+
+// ============================================
+// MODERN FONT IMPORTS
+// ============================================
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+// ============================================
+// CSS VARIABLES FOR THEME SWITCHING
+// ============================================
+:root {
+  // Light theme (default)
+  --bg-primary: #{$neutral-50};
+  --bg-secondary: #{white};
+  --bg-tertiary: #{$neutral-100};
+  --text-primary: #{$neutral-900};
+  --text-secondary: #{$neutral-600};
+  --text-tertiary: #{$neutral-500};
+  --text-disabled: #{$neutral-400};
+  --border-color: #{$neutral-200};
+  --shadow: #{$shadow-lg};
+}
+
+[data-theme="dark"] {
+  // Dark theme
+  --bg-primary: #{$primary-900};
+  --bg-secondary: #{$primary-800};
+  --bg-tertiary: #{$primary-700};
+  --text-primary: #{$neutral-50};
+  --text-secondary: #{$neutral-300};
+  --text-tertiary: #{$neutral-400};
+  --text-disabled: #{$neutral-500};
+  --border-color: rgba(255, 255, 255, 0.1);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+// ============================================
+// MODERN CSS RESET
+// ============================================
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  font-family: $font-primary;
+  font-size: $text-base;
+  line-height: $leading-normal;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  transition: background-color 300ms ease, color 300ms ease;
+  overflow-x: hidden;
+}
+
+// ============================================
+// TYPOGRAPHY BASE
+// ============================================
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-display;
+  font-weight: $font-bold;
+  line-height: $leading-tight;
+  color: var(--text-primary);
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+// ============================================
+// LINKS
+// ============================================
+a {
+  color: $accent-primary;
+  text-decoration: none;
+  transition: color $duration-base $ease-in-out-smooth;
+
+  &:hover {
+    color: $accent-secondary;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $accent-primary;
+    outline-offset: 2px;
+    border-radius: $radius-sm;
+  }
+}
+
+// ============================================
+// SELECTION
+// ============================================
+::selection {
+  background: $accent-primary;
+  color: white;
+}
+
+::-moz-selection {
+  background: $accent-primary;
+  color: white;
+}
+
+// ============================================
+// SCROLLBAR STYLING
+// ============================================
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: $accent-primary;
+  border-radius: $radius-full;
+
+  &:hover {
+    background: $accent-secondary;
+  }
+}
+
+// ============================================
+// ACCESSIBILITY
+// ============================================
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

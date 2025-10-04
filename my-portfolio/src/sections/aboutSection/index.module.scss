@@ -1,0 +1,57 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.AboutSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+
+  .aboutCard {
+    width: 100%;
+    background-color: white;
+    border-radius: 20px;
+    color: $primary-900;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+
+    @media (max-width: 800px) {
+      flex-direction: column;
+    }
+
+    .leftContainer {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      & > div {
+        padding: 20px 50px;
+      }
+
+      .about1 {
+        h2 {
+          @include section-title;
+        }
+      }
+
+      .about2,
+      .about1 {
+        flex-grow: 1;
+        width: 100%;
+        text-align: justify;
+      }
+    }
+
+    .imageContainer {
+      width: 100%;
+
+      .image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
