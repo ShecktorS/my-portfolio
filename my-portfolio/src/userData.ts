@@ -18,7 +18,7 @@ export const myUserData: UserData = {
   surname: "Sanfilippo",
   role: "Front-end Web Developer",
   slogan: [
-    "Esploro nuovi orizzonti con linee di codice intrecciate a creatività",
+    "Tra righe di codice e pentagrammi",
     "Armonizzare la creatività: dove la cadenza della vita incontra il flusso del codice",
     "Innovare. Giocare. Codificare. Ripetere",
     "Dove la tecnologia si armonizza con la creatività",
